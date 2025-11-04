@@ -25,4 +25,10 @@ np.random.rand(d0, d1, ..., dn)
 
 # creates an open mesh (broadcastable) from multiple 1D index arrays
 np.ix_(row_indices, col_indices, ...)
+
+# flip array along a specific
+np.flip(array, axis=axis_number)
+
+# create a diagonal matrix
+np.diag(v, k=0)
 ```
