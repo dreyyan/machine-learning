@@ -1,5 +1,8 @@
 # NumPy Notes
+## Concepts
+`Broadcasting`: lets you combine arrays of different shapes in operations
 
+## Cheatsheet
 ```python
 """ Attributes """
 # PI
@@ -16,4 +19,10 @@ np.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None, axis=
 
 # create array filled with a constant value
 np.full(shape, fill_value)
+
+# generate an array of random floats
+np.random.rand(d0, d1, ..., dn)
+
+# creates an open mesh (broadcastable) from multiple 1D index arrays
+np.ix_(row_indices, col_indices, ...)
 ```
