@@ -3,8 +3,8 @@
 ## Concepts
 
 `Broadcasting`: lets you combine arrays of different shapes in operations
-`Standardization`: process of transforming data so that each feature (column) has a mean = 0, std = 1
-`Normalization`: rescales data so that all values fall within a specific range — usually 0 to 1
+`Standardization`: process of transforming data so that each feature (column) has a mean = 0, std = 1  
+`Normalization`: rescales data so that all values fall within a specific range — usually 0 to 1  
 `Rolling Standard Deviation`: measures how much values fluctuate within a moving window of fixed size
 
 ## Cheatsheet
