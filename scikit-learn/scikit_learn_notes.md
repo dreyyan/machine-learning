@@ -1,6 +1,12 @@
 # Pandas Notes
 
 ## Concepts
+| Metric        | Question It Answers                                               | Interpretation                                           |
+| ------------- | ----------------------------------------------------------------- | -------------------------------------------------------- |
+| **Accuracy**  | *Overall, how often was the model correct?*                       | Good for balanced datasets (like Iris).                  |
+| **Precision** | *When the model predicts a class, how often is it correct?*       | High precision = few **false positives**.                |
+| **Recall**    | *How many actual class examples did the model successfully find?* | High recall = few **false negatives**.                   |
+| **F1 Score**  | *Balanced combination of precision and recall.*                   | Best summary measure when working with multiple classes. |
 
 
 ## Cheatsheet
