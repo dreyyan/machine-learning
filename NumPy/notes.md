@@ -40,6 +40,15 @@ np.diag(v, k=0)
 
 # generates random numbers following a bell curve (Gaussian distribution)
 np.random.normal(loc=0.0, scale=1.0, size=None)
+
+# reorder axes of an array
+np.transpose(a, axes=None) # (axes = a tuple/list of integers specifying the new order of all axes)
+
+# stack matrices horizontally/vertically
+np.hstack/np.vstack([a,b,c,...])
+
+# repeats array along each dimension
+np.tile(arr, reps)
 ```
 
 ## Cheatsheet: `scipy.stats`
@@ -51,6 +60,6 @@ mode(array, axis=0, nan_policy='propagate', keepdims: bool = False)
 
 ```
 
-## Additional Notes:
+## Additional Notes
 
 1. col-wise => axis=0, row-wise => axis=1
