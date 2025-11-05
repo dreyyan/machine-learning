@@ -65,4 +65,4 @@ mode(array, axis=0, nan_policy='propagate', keepdims: bool = False)
 
 ## Additional Notes
 
-1. col-wise => axis=0, row-wise => axis=1
+1. row-wise => axis=0, col-wise => axis=1

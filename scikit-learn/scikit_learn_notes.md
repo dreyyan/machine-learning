@@ -11,9 +11,35 @@
 
 ## Cheatsheet
 
-```python
+| Method                | What it does                                                                           | When to use                                        |
+| --------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------- |
+| **`fit()`**           | Learns (computes) the parameters from data only.                                       | When you only need to *learn* but not *apply* yet. |
+| **`fit_transform()`** | Learns the parameters **and immediately applies** the transformation to the same data. | During data preprocessing (training phase).        |
+fit() => test data
+fit_transform() => train data
 
-```
+| Transformer        | What it does                                               | Use case                                            |
+| ------------------ | ---------------------------------------------------------- | --------------------------------------------------- |
+| **StandardScaler** | Scales features to **mean=0, std=1**                       | Gradient-based models, SVM, LogisticRegression      |
+| **MinMaxScaler**   | Scales features to a **fixed range**, usually 0–1          | Neural networks, when you need bounded input        |
+| **MaxAbsScaler**   | Scales features to [-1, 1] based on **max absolute value** | Sparse data                                         |
+| **RobustScaler**   | Scales features using **median & IQR**                     | Data with outliers, more robust than StandardScaler |
+| **Normalizer**     | Scales **each sample** to unit norm (length=1)             | Text data (TF-IDF), row-wise normalization          |
+
+| Transformer        | What it does                                        | Use case                           |
+| ------------------ | --------------------------------------------------- | ---------------------------------- |
+| **OneHotEncoder**  | Converts categorical values into **binary columns** | Categorical features for any model |
+| **OrdinalEncoder** | Converts categories into **integer codes**          | Ordinal categories with order      |
+| **LabelEncoder**   | Converts labels (target) into integers              | Classification targets (0,1,2…)    |
+| Transformer            | What it does                                    | Use case                             |
+| ---------------------- | ----------------------------------------------- | ------------------------------------ |
+| **PolynomialFeatures** | Generates **polynomial & interaction features** | Linear regression, feature expansion |
+| **Binarizer**          | Converts values to 0/1 based on a threshold     | Thresholding features                |
+
+| Transformer       | What it does                                                 | Use case                       |
+| ----------------- | ------------------------------------------------------------ | ------------------------------ |
+| **SimpleImputer** | Fill missing values with **mean, median, mode, or constant** | Handle missing data            |
+| **KNNImputer**    | Fill missing values using **nearest neighbors**              | Better for correlated features |
 
 ## `sklearn: datasets`
 
