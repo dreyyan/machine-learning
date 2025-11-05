@@ -1,10 +1,14 @@
 # NumPy Notes
+
 ## Concepts
+
 `Broadcasting`: lets you combine arrays of different shapes in operations
 `Standardization`: process of transforming data so that each feature (column) has a mean = 0, std = 1
 `Normalization`: rescales data so that all values fall within a specific range — usually 0 to 1
+`Rolling Standard Deviation`: measures how much values fluctuate within a moving window of fixed size
 
-## Cheatsheet
+## Cheatsheet: `NumPy`
+
 ```python
 """ Attributes """
 # PI
@@ -33,4 +37,20 @@ np.flip(array, axis=axis_number)
 
 # create a diagonal matrix
 np.diag(v, k=0)
+
+# generates random numbers following a bell curve (Gaussian distribution)
+np.random.normal(loc=0.0, scale=1.0, size=None)
 ```
+
+## Cheatsheet: `scipy.stats`
+
+```python
+#
+# calculates mode
+mode(array, axis=0, nan_policy='propagate', keepdims: bool = False)
+
+```
+
+## Additional Notes:
+
+1. col-wise => axis=0, row-wise => axis=1
