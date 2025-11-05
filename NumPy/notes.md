@@ -7,7 +7,7 @@
 `Normalization`: rescales data so that all values fall within a specific range — usually 0 to 1
 `Rolling Standard Deviation`: measures how much values fluctuate within a moving window of fixed size
 
-## Cheatsheet: `NumPy`
+## Cheatsheet
 
 ```python
 """ Attributes """
@@ -51,7 +51,7 @@ np.hstack/np.vstack([a,b,c,...])
 np.tile(arr, reps)
 ```
 
-## Cheatsheet: `scipy.stats`
+## `scipy.stats`
 
 ```python
 #
