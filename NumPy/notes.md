@@ -15,7 +15,7 @@
 np.pi
 
 """ Methods """
-np.zeros(shape, dtype=float, order='C')
+np.ones/zeros(shape, dtype=float, order='C') # create an array of ones/zeros
 
 # create a 2D array with ones on a specified diagonal and zeros elsewhere
 np.eye(N, M=None, k=0, dtype=float)

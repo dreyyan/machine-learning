@@ -17,6 +17,11 @@ df.tail(n)       # last 5 rows (default=5)
 df.info()       # column info & dtypes
 df.describe()   # summary statistics
 
+df.loc[row_labels, column_labels] # uses row and column labels
+df.loc[(condition) & (condition)]
+df.iloc[row_positions, column_positions] # uses row and column positions
+df.query(expr, inplace=False)
+
 df.to_csv()     # save to .csv
 pd.read_csv(
     filepath_or_buffer,  # Path to the CSV file (string) or URL
