@@ -41,6 +41,9 @@ np.diag(v, k=0)
 # generates random numbers following a bell curve (Gaussian distribution)
 np.random.normal(loc=0.0, scale=1.0, size=None)
 
+# used to randomly pick elements from a given array or range
+np.random.choice(a, size=None, replace=True, p=None)
+
 # reorder axes of an array
 np.transpose(a, axes=None) # (axes = a tuple/list of integers specifying the new order of all axes)
 
