@@ -1,4 +1,4 @@
-# Pandas Notes
+# Scikit-Learn Notes
 
 ## Concepts
 | Metric        | Question It Answers                                               | Interpretation                                           |
@@ -7,7 +7,34 @@
 | **Precision** | *When the model predicts a class, how often is it correct?*       | High precision = few **false positives**.                |
 | **Recall**    | *How many actual class examples did the model successfully find?* | High recall = few **false negatives**.                   |
 | **F1 Score**  | *Balanced combination of precision and recall.*                   | Best summary measure when working with multiple classes. |
+Underfitting
+Overfittting
 
+EDA is the part of machine learning where you investigate and understand your dataset before modeling.
+The goal is to gather insights that help you decide:
+
+How to preprocess the data (scaling, encoding, handling missing values)
+
+Which features might be useful
+
+Whether the data is balanced
+
+Whether relationships are linear or non-linear
+
+How to handle outliers
+
+| Solver        | Notes                                                                  |
+| ------------- | ---------------------------------------------------------------------- |
+| `'lbfgs'`     | Default; efficient for multinomial problems, handles L2 regularization |
+| `'liblinear'` | Good for small datasets; supports L1 regularization                    |
+| `'saga'`      | Supports large datasets, L1/L2/elasticnet, stochastic                  |
+| `'newton-cg'` | Efficient for L2 regularization, multinomial                           |
+
+
+| Dataset size         | Recommended k |
+| -------------------- | ------------- |
+| Small (<1,000 rows)  | 5–10          |
+| Large (>10,000 rows) | 5             |
 
 ## Cheatsheet
 

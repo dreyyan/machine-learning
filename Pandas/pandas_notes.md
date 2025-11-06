@@ -41,6 +41,8 @@ pd.read_csv(
     pd.to_numeric(df, downcast='') # Downcast numericals
 
 )
+
+.value_counts()
 ```
 
 ## Additional Notes
