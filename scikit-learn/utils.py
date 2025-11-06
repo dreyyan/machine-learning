@@ -37,7 +37,7 @@ def load_dataset(dataset) -> Tuple[DataFrame, DataFrame, DataFrame]:
     return df, X, y
 
 # [FUNCTION] Display dataset information (e.g. statistics)
-def display_dataset_info(df, features=False, target=False, null_count=False, class_dist=False, info=False, describe=False) -> None:
+def display_dataset_info(df, target_col_name: str = '', features=False, target=False, null_count=False, class_dist=False, info=False, describe=False) -> None:
     """
     Display dataset information for exploratory data analysis (EDA).
 
@@ -45,6 +45,8 @@ def display_dataset_info(df, features=False, target=False, null_count=False, cla
     ----------
     df : pandas.DataFrame
         The dataset containing features and a 'target' column.
+    target_col_name : str
+        The column name of the target
     features : bool, optional
         If True, display the dataset's feature names.
     target : bool, optional
@@ -64,24 +66,29 @@ def display_dataset_info(df, features=False, target=False, null_count=False, cla
         This function prints information to the console and does not return any value.
     """
     print(f"{' [ DATASET INFORMATION ] ':=^40}")
-    
+    print(f"Shape: {df.shape}")
     if features:
         print(f"\n{' [ Features ] ':-^40}")
-        for name in df.drop(columns=['target']).columns.to_list():
+        for name in df.drop(columns=[target_col_name]).columns.to_list():
             print(f"• {name}")
             
     if target:
         print(f"\n{' [ Target ] ':-^40}")
-        print(f"• {df['target'].name}")
+        print(f"• {df[target_col_name].name}")
 
     if null_count:
         print(f"\n{' [ Null Count ] ':-^40}")
         null_counts = df.isnull().sum()
-        print(null_counts)
+        null_percent = (null_counts / len(df) ) * 100
+        null_summary = pd.DataFrame({
+            'Null Count': null_counts,
+            'Percentage': null_percent.round(2)
+        })
+        print(null_summary)
 
     if class_dist:
-        class_counts = df['target'].value_counts()
-        class_percent = df['target'].value_counts(normalize=True) * 100
+        class_counts = df[target_col_name].value_counts()
+        class_percent = df[target_col_name].value_counts(normalize=True) * 100
         print(f"\n{' [ Class Distribution ] ':-^40}")
         for cls in class_counts.index:
             print(f"• {cls}: {class_counts[cls]} samples ({class_percent[cls]:.2f}%)")
@@ -189,3 +196,19 @@ def plot_cv_accuracy(model, X, y, cv:int = 5, scoring:str = 'accuracy') -> None:
     plt.axhline(scores.mean(), color='red', linestyle='--', label=f"Mean = {scores.mean():.2f}")
     plt.legend()
     plt.show()
+
+# [FUNCTION] Impute null values using mean
+def impute_mean(df, col):
+    df.fillna({col: df[col].mean()}, inplace=True)
+    
+# [FUNCTION] Impute null values using median
+def impute_median(df, col):
+    df.fillna({col: df[col].median()}, inplace=True)
+    
+# [FUNCTION] Impute null values using mode
+def impute_mode(df, col):
+    df.fillna({col: df[col].mode()[0]}, inplace=True)
+
+# [FUNCTION] Drop feature columns
+def drop_features(df: DataFrame, col_list: list[str]) -> DataFrame:
+    return df.drop(columns=col_list)
